@@ -4,7 +4,7 @@
 #
 Name     : python-vlc
 Version  : 3.0.7110
-Release  : 6
+Release  : 7
 URL      : https://files.pythonhosted.org/packages/a8/51/299f4804c43f99d718ed43a63b1ea0712932e25b6bbe1ee1817cb8e954f7/python-vlc-3.0.7110.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a8/51/299f4804c43f99d718ed43a63b1ea0712932e25b6bbe1ee1817cb8e954f7/python-vlc-3.0.7110.tar.gz
 Summary  : VLC bindings for python
