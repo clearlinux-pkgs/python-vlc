@@ -4,7 +4,7 @@
 #
 Name     : python-vlc
 Version  : 3.0.7110
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/a8/51/299f4804c43f99d718ed43a63b1ea0712932e25b6bbe1ee1817cb8e954f7/python-vlc-3.0.7110.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a8/51/299f4804c43f99d718ed43a63b1ea0712932e25b6bbe1ee1817cb8e954f7/python-vlc-3.0.7110.tar.gz
 Summary  : VLC bindings for python
@@ -45,6 +45,7 @@ python components for the python-vlc package.
 Summary: python3 components for the python-vlc package.
 Group: Default
 Requires: python3-core
+Provides: pypi(python-vlc)
 
 %description python3
 python3 components for the python-vlc package.
@@ -52,13 +53,15 @@ python3 components for the python-vlc package.
 
 %prep
 %setup -q -n python-vlc-3.0.7110
+cd %{_builddir}/python-vlc-3.0.7110
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564951940
+export SOURCE_DATE_EPOCH=1583215806
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -71,7 +74,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/python-vlc
-cp COPYING %{buildroot}/usr/share/package-licenses/python-vlc/COPYING
+cp %{_builddir}/python-vlc-3.0.7110/COPYING %{buildroot}/usr/share/package-licenses/python-vlc/01a6b4bf79aca9b556822601186afab86e8c4fbf
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -82,7 +85,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/python-vlc/COPYING
+/usr/share/package-licenses/python-vlc/01a6b4bf79aca9b556822601186afab86e8c4fbf
 
 %files python
 %defattr(-,root,root,-)
