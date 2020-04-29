@@ -1,5 +1,5 @@
 PKG_NAME := python-vlc
-URL = https://files.pythonhosted.org/packages/a8/51/299f4804c43f99d718ed43a63b1ea0712932e25b6bbe1ee1817cb8e954f7/python-vlc-3.0.7110.tar.gz
+URL = https://files.pythonhosted.org/packages/cf/89/4c9ef5cfe8078a3ccddadd623c29306fcf5b956652e77f17f6b5ce5ff99d/python-vlc-3.0.9113.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
